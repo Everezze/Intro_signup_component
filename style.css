@@ -1,0 +1,83 @@
+:root{
+    --red: hsl(0,100%,74%);
+    --green: hsl(154,59%,51%);
+    --light-blue: hsl(248,32%,49%);
+    --dark-blue: hsl(249,10%,26%);
+    --grayish-blue: hsl(246,25%,77%);
+    --white: white;
+    --form-el-radius: .3rem;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    background:  url("./images/bg-intro-desktop.png"),var(--red);
+    background-repeat: no-repeat;
+    height:100vh;
+}
+
+body,h1,p{
+    margin:0;
+}
+
+body{
+    font-family: "Poppins",sans-serif;
+}
+
+main{
+    color: var(--white);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+form{
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border-radius: .6rem;
+}
+
+aside{
+    background: var(--light-blue);
+    padding: 1rem;
+    border-radius: .6rem;
+    text-align: center;
+}
+
+input,button{
+    width: 100%;
+    font-family: "Poppins",sans-serif;
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-radius: var(--form-el-radius);
+    font-weight: 600;
+}
+
+input{
+    border: 1px solid var(--grayish-blue);
+}
+
+button{
+    background: var(--green);
+    border: none;
+    color: var(--white);
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+form>*+*{
+    margin-top:1rem;
+}
+
+form strong{
+    display: block;
+    font-size: .6rem;
+    text-align: center;
+    color: var(--grayish-blue);
+}
+
+form strong a{
+    color: var(--red);
+    text-decoration: none;
+}
