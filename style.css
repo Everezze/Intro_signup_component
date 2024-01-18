@@ -28,8 +28,23 @@ body{
 
 main{
     color: var(--white);
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+article:first-of-type{
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+h1{
+    font-size: min(3vw + 1rem, 2.5rem);
+}
+
+h1+p{
+    font-size: .9rem;
+    padding: 0 1rem;
 }
 
 form{
@@ -37,11 +52,12 @@ form{
     padding: 1.5rem;
     border-radius: 1rem;
     border-radius: .6rem;
+    margin-top: 1.5rem;
 }
 
 aside{
     background: var(--light-blue);
-    padding: 1rem;
+    padding: 1rem 3rem;
     border-radius: .6rem;
     text-align: center;
 }
@@ -56,6 +72,10 @@ input,button{
 
 input{
     border: 1px solid var(--grayish-blue);
+}
+
+input:focus{
+    outline: 1px solid var(--dark-blue);
 }
 
 button{
@@ -80,4 +100,47 @@ form strong{
 form strong a{
     color: var(--red);
     text-decoration: none;
+}
+
+form div{
+    position: relative;
+}
+
+.error-icon{
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+.error-msg{
+    color: var(--red);
+    display: none;
+    margin-top: .25rem;
+    font-size: .6rem;
+    text-align: end;
+    font-style: italic;
+    font-weight: 600;
+}
+
+@media screen and (min-width:800px) {
+    article{
+        display: inline-block;
+        width: 49%;
+        vertical-align: middle;
+    }
+
+    article:first-of-type{
+        text-align: start;
+        padding: 3rem;
+    }
+
+    h1+p{
+        padding: 0;
+    }
+
+    form{
+        padding: 3rem 2.5rem;
+    }
 }
