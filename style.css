@@ -124,6 +124,14 @@ form div{
     font-weight: 600;
 }
 
+.error-icon.active{
+    display: block;
+}
+
+.error-msg.active{
+    display: block;
+}
+
 @media screen and (min-width:800px) {
     article{
         display: inline-block;
