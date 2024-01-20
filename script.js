@@ -6,8 +6,8 @@ let inputValidation = [false,false,false,false];
 
 
 const regexes = {
-    "first-name": /^\w+$/,
-    "last-name": /^\w+$/,
+    "first-name": /^[a-zA-Z]+(-?)[a-zA-Z]+$/,
+    "last-name": /^[a-zA-Z]+(-?)[a-zA-Z]+$/,
     "email": /^\w+@\w+\.[a-z]{2,3}$/,
     "password": /^\w{5,13}$/ 
 }
