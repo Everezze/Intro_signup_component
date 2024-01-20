@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://everezze.github.io/Intro_signup_component/](https://everezze.github.io/Intro_signup_component/)
 
 ## My process
 

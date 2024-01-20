@@ -14,9 +14,7 @@ const regexes = {
 
 inputs.forEach(function(element,index){
     element.addEventListener("input",function(){
-        //console.log(this);
         if(this.value.match(regexes[this.getAttribute("name")]) || this.value == ""){
-            console.log("valid input");
             if(submittedOnce){
                 let iconError = this.nextElementSibling;
                 let msgError = this.parentNode.nextElementSibling;
@@ -34,7 +32,6 @@ inputs.forEach(function(element,index){
         else{
             let iconError = this.nextElementSibling;
             let msgError = this.parentNode.nextElementSibling;
-            console.log("INvalid input");
             if(!iconError.classList.contains("active")){
                 if(submittedOnce){
                     iconError.classList.add("active");
