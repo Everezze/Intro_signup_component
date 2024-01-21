@@ -6,10 +6,10 @@ let inputValidation = [false,false,false,false];
 
 
 const regexes = {
-    "first-name": /^[a-zA-Z]+(-?)[a-zA-Z]+$/,
-    "last-name": /^[a-zA-Z]+(-?)[a-zA-Z]+$/,
-    "email": /^\w+@\w+\.[a-z]{2,3}$/,
-    "password": /^\w{5,13}$/ 
+    "First Name": /^[a-zA-Z]+(-?)[a-zA-Z]+$/,
+    "Last Name": /^[a-zA-Z]+(-?)[a-zA-Z]+$/,
+    "Email": /^\w+@\w+\.[a-z]{2,3}$/,
+    "Password": /^\w{5,13}$/
 }
 
 inputs.forEach(function(element,index){
@@ -32,6 +32,8 @@ inputs.forEach(function(element,index){
         else{
             let iconError = this.nextElementSibling;
             let msgError = this.parentNode.nextElementSibling;
+            let determinant = this.getAttribute("name") == "Email" ? "an" : "a"
+            msgError.textContent = `Looks like this is not ${determinant} ${this.getAttribute("name")}`;
             if(!iconError.classList.contains("active")){
                 if(submittedOnce){
                     iconError.classList.add("active");
@@ -51,12 +53,16 @@ submit.addEventListener("click",function(event){
                 let input = inputs[index];
                 let iconError = input.nextElementSibling;
                 let msgError = input.parentNode.nextElementSibling;
+                if(input.value == ""){
+                    msgError.textContent = `${input.getAttribute("name")} cannot be empty`;
+                }
                 iconError.classList.add("active");
                 msgError.classList.add("active");
             }
         });
         submittedOnce=true;
     }
+
     if(!sendableForm){
         event.preventDefault();
     }

@@ -13,8 +13,9 @@
 }
 
 html{
-    background:  url("./images/bg-intro-desktop.png"),var(--red);
+    background:  url("./images/bg-intro-mobile.png"),var(--red);
     background-repeat: no-repeat;
+    background-size: cover;
     height:100vh;
 }
 
@@ -133,6 +134,12 @@ form div{
 }
 
 @media screen and (min-width:800px) {
+    html{
+        background:  url("./images/bg-intro-desktop.png"),var(--red);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     article{
         display: inline-block;
         width: 49%;
