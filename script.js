@@ -47,21 +47,19 @@ inputs.forEach(function(element,index){
 
 submit.addEventListener("click",function(event){
     let sendableForm = inputValidation.every( element => element == true);
-    if(!submittedOnce){
-        inputValidation.forEach(function(element,index){
-            if(!element){
-                let input = inputs[index];
-                let iconError = input.nextElementSibling;
-                let msgError = input.parentNode.nextElementSibling;
-                if(input.value == ""){
-                    msgError.textContent = `${input.getAttribute("name")} cannot be empty`;
-                }
-                iconError.classList.add("active");
-                msgError.classList.add("active");
+    inputValidation.forEach(function(element,index){
+        if(!element){
+            let input = inputs[index];
+            let iconError = input.nextElementSibling;
+            let msgError = input.parentNode.nextElementSibling;
+            if(input.value == ""){
+                msgError.textContent = `${input.getAttribute("name")} cannot be empty`;
             }
-        });
-        submittedOnce=true;
-    }
+            iconError.classList.add("active");
+            msgError.classList.add("active");
+        }
+    });
+    submittedOnce=true;
 
     if(!sendableForm){
         event.preventDefault();
