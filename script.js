@@ -52,11 +52,13 @@ submit.addEventListener("click",function(event){
             let input = inputs[index];
             let iconError = input.nextElementSibling;
             let msgError = input.parentNode.nextElementSibling;
-            if(input.value == ""){
-                msgError.textContent = `${input.getAttribute("name")} cannot be empty`;
+            if(!submittedOnce || input.value == ""){
+                if(input.value == ""){
+                    msgError.textContent = `${input.getAttribute("name")} cannot be empty`;
+                }
+                iconError.classList.add("active");
+                msgError.classList.add("active");
             }
-            iconError.classList.add("active");
-            msgError.classList.add("active");
         }
     });
     submittedOnce=true;
